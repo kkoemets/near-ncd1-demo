@@ -1,3 +1,4 @@
+// TODO: Here should be the contract I want to use for dApp?
 const CONTRACT_NAME = process.env.CONTRACT_NAME || 'near-ncd1-demo';
 
 function getConfig(env) {
