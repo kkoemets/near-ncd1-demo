@@ -32,3 +32,4 @@ yarn-error.log*
 
 #IntelliJ
 /.idea/
+/contract/node_modules/

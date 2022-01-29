@@ -13,7 +13,6 @@ import { Nft } from './models';
  *
  * @param title the name of the meme
  * @param data the data containing some unique identifier of the meme used for rendering
- * @param category the category of the meme
  */
 export function init(title: string, data: string): void {
   // contract may only be initialized once
@@ -26,7 +25,7 @@ export function init(title: string, data: string): void {
   );
 
   // title has to be at least 1 character
-  assert(title.length > 0, 'Meme title may not be blank');
+  assert(title.length > 0, 'NFT title may not be blank');
 
   // create the meme using incoming metadata
   Nft.create(title, data);
