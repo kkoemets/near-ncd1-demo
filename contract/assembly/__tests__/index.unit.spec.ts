@@ -43,6 +43,7 @@ describe('meme initialization', () => {
 
   it('creates a new meme with proper metadata', () => {
     attachMinBalance();
+    console.log('hmm');
 
     contract.init(TITLE, DATA);
     // const m = contract.get_meme()
@@ -75,7 +76,8 @@ describe('meme initialization', () => {
   it('requires a minimum balance', () => {
     expect(() => {
       contract.init(TITLE, DATA);
-    }).toThrow('Minimum account balance must be attached to initialize this contract (3 NEAR)');
+    }).toThrow(
+      'Minimum account balance must be attached to initialize this contract (3 NEAR)',
+    );
   });
-
 });
