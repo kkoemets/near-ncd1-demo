@@ -31,14 +31,12 @@ export function init(title: string, data: string): void {
   Nft.create(title, data);
 }
 
-
 /**
  * Track whether or not the meme has been initialized.
  */
 function is_initialized(): bool {
   return storage.hasKey(MEME_KEY);
 }
-
 
 /*
  * This is an example of an AssemblyScript smart contract with two simple,
@@ -54,7 +52,7 @@ function is_initialized(): bool {
  *
  */
 
-const DEFAULT_MESSAGE = 'Hi';
+const DEFAULT_MESSAGE = 'Hello';
 
 // Exported functions will be part of the public interface for your smart contract.
 // Feel free to extract behavior to non-exported functions!
@@ -71,17 +69,4 @@ export function setGreeting(message: string): void {
   // Use logging.log to record logs permanently to the blockchain!
   logging.log(`Saving greeting "${message}" for account "${accountId}"`);
   storage.set(accountId, message);
-}
-
-export function saveNft(imgData: string): void {
-  const accountId = Context.sender;
-  storage.set(accountId, imgData);
-}
-
-export function getNft(accountId: string): string | null {
-  // This uses raw `storage.get`, a low-level way to interact with on-chain
-  // storage for simple contracts.
-  // If you have something more complex, check out persistent collections:
-  // https://docs.near.org/docs/concepts/data-storage#assemblyscript-collection-types
-  return storage.get<string | null>(accountId);
 }

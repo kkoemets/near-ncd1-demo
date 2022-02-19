@@ -1,4 +1,4 @@
-near-ncd1-demo Smart Contract
+create-near-app-template Smart Contract
 ==================
 
 A [smart contract] written in [AssemblyScript] for an app initialized with [create-near-app]
